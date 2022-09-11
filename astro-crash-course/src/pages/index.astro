@@ -1,8 +1,18 @@
 ---
 const name = 'Astro'
 const style = 'purple'
+const users = ['Matt', 'Sarah', 'Tracy']
+const visible = true
 ---
 <h1 class={style}>Hello from {name}! {1 + 1}</h1>
+<>
+<ul>
+	{users.map(user => <li>{user}</li>)}
+</ul>
+
+{visible && <p>Visible</p>}
+</>
+
 
 <style>
 	h1 {

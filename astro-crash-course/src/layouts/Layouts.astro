@@ -1,5 +1,8 @@
 ---
-const title: string = 'Astro Crash Course'
+export interface Props {
+  title: string;
+}
+const { title = "Astro Crash Course" } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>

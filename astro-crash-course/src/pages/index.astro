@@ -1,10 +1,15 @@
 ---
 const name = 'Astro'
+const style = 'purple'
 ---
-<h1>Hello from {name}! {1 + 1}</h1>
+<h1 class={style}>Hello from {name}! {1 + 1}</h1>
 
 <style>
 	h1 {
 		color: red;
+	}
+
+	.purple {
+		color: purple;
 	}
 </style>

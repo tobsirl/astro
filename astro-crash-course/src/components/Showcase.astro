@@ -2,6 +2,12 @@
 import logos from '../images/framework-logos.png'
 import logosSmall from '../images/framework-logos-small.png'
 
+export interface Props {
+  heading?: string;
+  text?: string;
+  showExtra?: boolean;
+}
+
 const { heading = "Welcome To The Astro Crash Course!", text="Build super fast HTML-first websites using your favorite JavaScript frameworks", showExtra = false } = Astro.props as Props;
 ---
 

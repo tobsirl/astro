@@ -1,19 +1,21 @@
 ---
 import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro'
+
+const articles = await Astro.glob('../articles/*.md');
 ---
 
 <Layout title="Astro Blog">
   <section class="page-content">
     <div class="container">
-      {posts.map(post => (
+      {articles.map(article => (
         <Card>
-          <h3>{post.frontmatter.title}</h3>
+          <h3>{article.frontmatter.title}</h3>
           <div>
-          Written by <strong>{post.frontmatter.author} </strong> on {new Date(post.frontmatter.date).toLocaleDateString()}
+          Written by <strong>{article.frontmatter.author} </strong> on {new Date(article.frontmatter.date).toLocaleDateString()}
         </div>
-          <p>{post.frontmatter.excerpt}</p>  
-          <a class="btn" href={`/${post.frontmatter.slug}`}>Read More</a>
+          <p>{article.frontmatter.excerpt}</p>  
+          <a class="btn" href={`/${article.frontmatter.slug}`}>Read More</a>
         </Card>
       ))}
     </div>
